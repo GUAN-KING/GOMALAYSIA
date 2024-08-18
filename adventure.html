@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Discover the adventure spots in Malaysia. Explore the thrill of jungle trekking, diving, and mountain climbing.">
+    <title>Adventure Sports - GO MALAYSIA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/Picture/Favicon.png" type="image/x-icon"> <!-- Adding a favicon -->
+</head>
+
+<body>
+    <video autoplay muted loop id="bgVideo">
+        <source src="assets/video/video3.mp4" type="video/mp4">
+    </video>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li><a href="HomePage.html" aria-label="Homepage">Home</a></li>
+                <li><a href="history.html" aria-label="History">History</a></li>
+                <li><a href="LocalFood.html" aria-label="Local Food">Local Food</a></li>
+                <li><a href="travellers.html" aria-label="Tourists">Tourists</a></li>
+                <li><a href="traveltips.html" aria-label="Travel Tips">Travel Tips</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">Adventure</a></li>
+                <li><a href="aboutUs.html" aria-label="About Us">About Us</a></li>
+                <li><a id="login-link" href="LogIn.html" aria-label="Log In">Log In</a></li>
+                    <li><a id="logout-link" href="logout.html" aria-label="Log Out">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container my-5">
+        <section class="row">
+            <div class="col-md-12 text-center">
+                <h2>Adventure in Malaysia</h2>
+                <p>Discover the thrilling adventures that Malaysia has to offer!</p>
+            </div>
+        </section>
+        <section class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="assets/Picture/jungle_trekking.jpg" class="card-img-top" alt="Jungle Trekking">
+                    <div class="card-body">
+                        <h5 class="card-title">Jungle Trekking</h5>
+                        <p class="card-text">Experience the thrill of jungle trekking in Malaysia's lush rainforests.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#jungleModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="assets/Picture/scuba_diving.jpg" class="card-img-top" alt="Scuba Diving">
+                    <div class="card-body">
+                        <h5 class="card-title">Scuba Diving</h5>
+                        <p class="card-text">Dive into the crystal-clear waters and discover vibrant marine life.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#scubaModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="assets/Picture/mountain_climbing.jpg" class="card-img-top" alt="Mountain Climbing">
+                    <div class="card-body">
+                        <h5 class="card-title">Mountain Climbing</h5>
+                        <p class="card-text">Challenge yourself with mountain climbing adventures in Malaysia's highlands.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#mountainModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modals for More Information -->
+    <div class="modal fade" id="jungleModal" tabindex="-1" role="dialog" aria-labelledby="jungleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Jungle Trekking</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Jungle trekking can be loosely defined as hiking through the rainforest, but it is so much more than that. Trekking in the jungle is an exciting challenge that takes you far away from modern civilization into some of the most biodiverse areas on earth.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="scubaModal" tabindex="-1" role="dialog" aria-labelledby="scubaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Scuba Diving</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Scuba diving is a mode of underwater diving whereby divers use breathing equipment that is completely independent of a surface breathing gas supply, and therefore has a limited but variable endurance.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mountainModal" tabindex="-1" role="dialog" aria-labelledby="mountainModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mountain Climbing</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Mountain climbing, is the sport of reaching, or trying to reach, high points in mountainous areas, mainly for the joy and thrill of the climb. The sport involves intense physical activity. It includes hiking, rock climbing, and traversing slopes covered with ice and snow.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="text-center py-3">
+        <p>&copy; 2024 GO MALAYSIA. ALL RIGHTS RESERVED.</p>
+    </footer>
+    
+    <a href="#" id="backToTop" title="Back to top">&uarr;</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <script>
+        // Back to top functionality
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTop").style.display = "block";
+            } else {
+                document.getElementById("backToTop").style.display = "none";
+            }
+        }
+
+        document.getElementById("backToTop").onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

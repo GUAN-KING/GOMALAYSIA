@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Food - Go Malaysia</title>
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background setup */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/Picture/FoodBg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+
+        /* Header styling */
+        header {
+            background-image: url('assets/Video/NyanCat.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 80px;
+            text-align: end;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin-top: 52px;
+        }
+
+        header img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Slideshow styling */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        h2#local-food-title {
+        font-size: 2.5em;
+        color: #00796b;
+        text-align: center;
+        margin: 50px 0;
+        margin-left: 195px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        border-bottom: 3px solid #00796b;
+        display: inline-block;
+
+        }
+
+        .section-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 150px;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, background-color 0.4s ease;
+            overflow: hidden;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section img.section-img {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-right: 40px;
+        transition: transform 0.4s ease;
+        }
+
+        
+        .section img.map-icon {
+        width: 50px; 
+        height: auto; 
+        margin-bottom: -15px;
+        margin-right: 10px; 
+        object-fit: contain; 
+        border-radius: 0; 
+        transition: none; 
+        }
+
+
+        .section:hover img {
+            transform: scale(1.1);
+        }
+
+        .section-content {
+            max-width: 600px;
+            transition: transform 0.4s ease;
+        }
+
+        .section-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #00796b;
+            border-bottom: 2px solid #00796b;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Background images for p1 */
+        #NasiLemak {
+            background-image: url('assets/Picture/NasiLemak.jpg');
+        }
+
+        #PenangLaksa {
+            background-image: url('assets/Picture/PenangLaksa.jpg');
+        }
+
+        #RamlyBurger {
+            background-image: url('assets/Picture/RamlyBurger.jpg');
+        }
+
+        #RotiCanai {
+            background-image: url('assets/Picture/RotiCanai.jpg');
+        }
+
+        #Satay {
+            background-image: url('assets/Picture/Satay.jpg');
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: rgba(111, 219, 255, 0.2);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav li {
+            margin: 0 15px;
+            display: flex; 
+            align-items: center; 
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 12px;
+            display: block;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: lightslategrey;
+            color: white;
+        }
+
+        
+        footer {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            margin-top: -50px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            z-index: 1;
+        }
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="assets/Picture/Favicon.png">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="LocalFood.html">Local Food</a></li>
+            <li><a href="travellers.html">Tourists</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="adventure.html">Adventure</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a id="login-link" href="LogIn.html" aria-label="Log In">Log In</a></li>
+            <li><a id="logout-link" href="logout.html" aria-label="Log Out">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        
+        <h1>Welcome to Local Food</h1>
+        
+    </header>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <a href="#nasi-lemak">
+                <img src="assets/Picture/NasiLemak.jpg" alt="Nasi Lemak">
+            </a>
+        </div>
+    
+        <div class="mySlides fade">
+            <a href="#penang-laksa">
+                <img src="assets/Picture/PenangLaksa.jpg" alt="Penang Laksa">
+            </a>
+        </div>
+    
+        <div class="mySlides fade">
+            <a href="#ramly-burger">
+                <img src="assets/Picture/RamlyBurger.jpg" alt="Ramly Burger">
+            </a>
+        </div>
+    
+        <div class="mySlides fade">
+            <a href="#roti-canai">
+                <img src="assets/Picture/RotiCanai.jpg" alt="Roti Canai">
+            </a>
+        </div>
+    
+        <div class="mySlides fade">
+            <a href="#satay">
+                <img src="assets/Picture/Satay.jpg" alt="Satay">
+            </a>
+        </div>
+    </divv>
+    
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <section class="text-center">
+        <h2 id="local-food-title">Local Food in Malaysia</h2>
+
+        <div class="section-container">
+            <section class="section" id="nasi-lemak" >
+                <img src="assets/Picture/NasiLemak.jpg" alt="Nasi Lemak" class="section-img">
+                <div class="section-content">
+                    <h2>Nasi Lemak</h2>
+                    <p><strong>Nasi lemak</strong> is one of our Malaysian famous street meals, which can be found anywhere in Malaysia.
+                        Nasi lemak is basically covered by cooked fluffy aromatic rice with pandan leaf, coconut milk, and some other herbs depending on the chef because each state has its own specialty.
+                        Then, put some ingredients beside the rice like spiced fried chicken, hard-boiled eggs, slices of cucumber, and some peanuts. Lastly, it will be covered by a sauce called sambal
+                        which has a unique spicy taste in Malaysia. Some canteens will let the customers choose the toppings they like.
+                    </p>
+                    <a href="https://www.google.com/maps/place/Nasi+Lemak+Wanjo+Kg+Baru/@3.1623678,101.7018476,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc4827b7cf7f21:0x35d3785147f52f1d!8m2!3d3.1623678!4d101.7044279!16s%2Fg%2F1hc6vd2vh?entry=ttu"
+                        target="_blank"><img src="assets/Picture/MapIcon.png" class="map-icon">Found on Kuala Lumpur (Nasi Lemak Wanjo Kg Baru)</a>
+                </div>
+            </section>
+    
+            <section class="section" id="penang-laksa">
+                <img src="assets/Picture/PenangLaksa.jpg" alt="Penang Laksa" class="section-img">
+                <div class="section-content">
+                    <h2>Penang Laksa</h2>
+                    <p><strong>Asam Laksa</strong> is also one of our Malaysian popular meals, especially in Penang. Asam Laksa is a perfect blend of spicy, sweet, savory, and umami flavors. To make this noodle meal look unique,
+                        it is because the noodle soup is made up of poached mackerel (or sardines), tamarind, lemongrass, and chili peppers as the base ingredients. Other commonly used ingredients include
+                        garnishes like ginger flower buds, pineapple slices, onions, mint, and shrimp paste (hae ko). By using all these ingredients, the final outcome is always rich, aromatic, and strong-flavored,
+                        which has made Malaysians love it.
+                    </p>
+                    <a href="https://www.google.com/maps/place/Penang+Road+Famous+Laksa/@5.416661,100.3285755,17z/data=!3m1!4b1!4m6!3m5!1s0x304ac396ec86d23d:0x3d16f979154f0f62!8m2!3d5.416661!4d100.3311558!16s%2Fg%2F11c1r1h_4w?entry=ttu"
+                    target="_blank"><img src="assets/Picture/MapIcon.png" class="map-icon">Found on Penang (Penang Road Famous Laksa)</a>
+                </div>
+                </section>
+    
+                <section class="section" id="ramly-burger">
+                    <img src="assets/Picture/RamlyBurger.jpg" alt="Ramly Burger" class="section-img">
+                    <div class="section-content">
+                        <h2>Ramly Burger</h2>
+                        <p>This <strong>Ramly Burger</strong> is a street food that is only available at night markets and late-night eateries, and it can be found at mobile stalls across Malaysia.
+                            The core ingredient, patties, are usually produced by "Ramly" food processing companies, ensuring consistent quality standards. It is a Malaysian-style burger that is made with a beef or chicken patty that is seasoned with various spices. 
+                            It is typically topped with lettuce, cheese, onions, and sauce. What makes it different from ordinary burgers is that the patty is wrapped in a thin layer of egg. 
+                            Each vendor personalizes their creation with their choice of condiments and cooking techniques, making each “Ramly Burger” a unique adventure. It can't be said which state’s Ramly Burger is better; it only depends on the customers.
+                        </p>
+                    </div>
+                </section>
+            
+                <section class="section" id="roti-canai">
+                    <img src="assets/Picture/RotiCanai.jpg" alt="Roti Canai" class="section-img">
+                    <div class="section-content">
+                        <h2>Roti Canai</h2>
+                        <p><strong>Roti Canai</strong> is also our Malaysian famous street food and mostly can found in any food store operated by Indians. It is a type of flatbread that is crispy on the outside and soft on the inside, similar to Indian paratha.
+                            Roti canai is made by repeatedly folding the dough into a square shape, giving it its characteristic flaky texture. The dough is usually made with flour, water, salt, and ghee (clarified butter).
+                            It is then cooked on a hot griddle until golden brown. Roti canai is typically served with a side of dhal (lentil curry) or other types of curry, making it a versatile dish that can be enjoyed for breakfast, lunch, or dinner.
+                            Not only roti canai, this street dish also has many other versions like roti telur, roti tisu, roti planta, and more.
+                        </p>
+                        <a href="https://www.google.com/maps/place/Mansion+Tea+Stall+Al-Amna+Restaurant/@3.1519351,101.694834,17z/data=!3m1!4b1!4m6!3m5!1s0x31cc482d3aa59083:0x6e270193012c2c81!8m2!3d3.1519351!4d101.6974143!16s%2Fg%2F11bxfync_5?entry=ttu"
+                            target="_blank"><img src="assets/Picture/MapIcon.png" class="map-icon">Found on Penang (Mansion Tea Stall Al-Amna Restaurant)</a>
+                    </div>
+                </section>
+            
+                <section class="section" id="satay">
+                    <img src="assets/Picture/Satay.jpg" alt="Satay" class="section-img">
+                    <div class="section-content">
+                        <h2>Satay</h2>
+                        <p><strong>Satay</strong> is one of the popular street snacks in Malaysia, and it is usually available at night markets and for late-night cravings.
+                            It can be found easily when the charred, spicy smoke billows through night markets, and when near the stall, it will cloud your vision and burn your nose with the aroma of meat marinated with a secret blend of spices.
+                            The ingredients of satay are very simple and easy to make, requiring only chopped meat like chicken, pork, beef, lamb, or any meat depending on customer preference,
+                            marinated with a secret blend of spices, then skewered with bamboo sticks, grilled over a charcoal fire, and served with a rich, spicy dipping sauce with some crushed peanuts.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+    <footer>
+        &copy; 2024 Go Malaysia. All rights reserved.
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+// Show next/previous slide when arrows are clicked
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Show current slide when dots are clicked
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// Auto slide every 3 seconds
+setInterval(function() {
+    plusSlides(1);
+}, 3000);
+
+        document.addEventListener("scroll", function() {
+            const sections = document.querySelectorAll(".section");
+            const windowHeight = window.innerHeight;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const distanceFromTop = rect.top + rect.height / 2;
+
+                if (distanceFromTop < windowHeight && distanceFromTop > 0) {
+                    section.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                }
+            });
+        });
+
+// Function to check if user is logged in
+ function checkLoginStatus() {
+    const username = localStorage.getItem('username');
+    const loggedIn = username !== null; 
+
+    const loginLink = document.getElementById('login-link');
+    const logoutLink = document.getElementById('logout-link');
+
+    if (loggedIn) {
+        loginLink.style.display = 'none';
+        logoutLink.style.display = 'inline';
+     } else {
+        loginLink.style.display = 'inline';
+        logoutLink.style.display = 'none';
+    }
+    }
+
+// Run the check on page load
+window.onload = checkLoginStatus;
+    </script>
+</body>
+
+</html>

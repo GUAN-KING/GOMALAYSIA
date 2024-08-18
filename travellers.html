@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore top travel spots in Malaysia including Danum Valley, Pulau Redang, and Mount Kinabalu. Discover pristine natural beauty and adventure activities.">
+    <title>GO MALAYSIA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preload" href="assetes/images/Danum Valley.jpg" as="image">
+    <link rel="preload" href="assets/images/Pulau Redang.jpg" as="image">
+    <link rel="preload" href="assets/images/Mount Kinabalu.jpg" as="image">
+</head>
+
+<body>
+    <video autoplay muted loop id="bgVideo">
+        <source src="assets/video/video1.mp4" type="video/mp4">
+    </video>
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li><a href="HomePage.html" aria-label="Homepage">Home</a></li>
+                <li><a href="history.html" aria-label="History">History</a></li>
+                <li><a href="LocalFood.html" aria-label="Local Food">Local Food</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">Tourists</a></li>
+                <li><a href="traveltips.html" aria-label="Travel Tips">Travel Tips</a></li>
+                <li><a href="adventure.html" aria-label="Adventure">Adventure</a></li>
+                <li><a href="aboutUs.html" aria-label="About Us">About Us</a></li>
+                <li><a id="login-link" href="LogIn.html" aria-label="Log In">Log In</a></li>
+                <li><a id="logout-link" href="logout.html" aria-label="Log Out">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container my-5" role="main">
+        <section class="row mb-5 section-bg">
+            <div class="col-md-6">
+                <h2>Danum Valley</h2>
+                <p>Discover the untouched beauty of Malaysia's rainforests. Trek through dense jungles and spot exotic wildlife.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#danumModal">
+                    More Info
+                </button>
+            </div>
+            <div class="col-md-6">
+                <img src="assets/Picture/Danum Valley.jpg" srcset="assets/Picture/Danum Valley.jpg 1x, assets/Picture/Danum Valley@2x.jpg 2x" sizes="(max-width: 768px) 100vw, 50vw" class="img-fluid" alt="Danum Valley" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Section for Pulau Redang -->
+        <section class="row mb-5 section-bg">
+            
+            <div class="col-md-6">
+                <h2>Pulau Redang</h2>
+                <p>Explore the vibrant marine life in Malaysia's crystal-clear waters. Dive into an underwater paradise.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#redangModal">
+                    More Info
+                </button>
+            </div>
+            <div class="col-md-6">
+                <img src="assets/Picture/Pulau Redang.jpg" srcset="assets/Picture/Pulau Redang.jpg 1x, assets/Picture/Pulau Redang@2x.jpg 2x" sizes="(max-width: 768px) 100vw, 50vw" class="img-fluid" alt="Pulau Redang" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Section for Mount Kinabalu -->
+        <section class="row mb-5 section-bg">
+            <div class="col-md-6">
+                <h2>Mount Kinabalu</h2>
+                <p>Challenge yourself with a climb up Malaysia's highest peaks. Enjoy breathtaking views and a sense of accomplishment.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kinabaluModal">
+                    More Info
+                </button>
+            </div>
+            <div class="col-md-6">
+                <img src="assets/Picture/Mount Kinabalu.jpg" srcset="assets/Picture/Mount Kinabalu.jpg 1x, assets/Picture/Mount Kinabalu@2x.jpg 2x" sizes="(max-width: 768px) 100vw, 50vw" class="img-fluid" alt="Mount Kinabalu" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals for More Information -->
+    <div class="modal fade" id="danumModal" tabindex="-1" role="dialog" aria-labelledby="danumModalLabel" aria-hidden="true" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="danumModalLabel">Danum Valley</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Danum Valley is renowned for its biodiversity and pristine rainforest. It’s an exceptional destination for eco-tourism and adventure enthusiasts looking to explore one of the most preserved natural habitats in Borneo.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="redangModal" tabindex="-1" role="dialog" aria-labelledby="redangModalLabel" aria-hidden="true" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="redangModalLabel">Pulau Redang</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Pulau Redang is famous for its stunning coral reefs and marine biodiversity. Whether you’re into snorkeling, diving, or simply relaxing on the beach, Redang offers a perfect tropical getaway.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="kinabaluModal" tabindex="-1" role="dialog" aria-labelledby="kinabaluModalLabel" aria-hidden="true" aria-modal="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kinabaluModalLabel">Mount Kinabalu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Mount Kinabalu, a UNESCO World Heritage Site, is a must-visit for climbers and nature lovers. The climb offers spectacular views and a chance to experience diverse ecosystems, from lush rainforest to alpine meadows.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3" role="contentinfo">
+        <p>&copy; 2024 GO MALAYSIA. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <!-- Bootstrap and jQuery JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <a href="#" id="backToTop" title="Back to top">&uarr;</a>
+</body>
+</html>

@@ -1,0 +1,433 @@
+/* General Styles */
+body {
+    background-image: url('assets/Picture/History/historyBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: 'Lora', serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Video Background*/
+#bgVideo {
+    display: none; 
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    z-index: -2; 
+    animation: fadeInBlur 1s ease-out; 
+}
+
+body::before {
+    content: "";
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+/* Headings */
+h1 {
+    font-size: 3.125rem; 
+    text-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    text-align: center;
+    margin-top: 12.25rem;
+    margin-bottom: 10.5rem;
+    animation: fadeInBlur 2s ease-out;
+}
+
+/* Text Styles */
+.age {
+    font-size: 1.875rem;
+    line-height: 1.6;
+    font-weight: bold;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.9);
+    position: relative;
+    margin: 1.25rem 0;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    width: calc(100% - 2.5rem); /* Adjust width to avoid overflow issues */
+}
+
+.content {
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.8);
+}
+
+.content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.building {
+    font-size: 1.75rem;
+    color: #C0C0C0;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.9);
+}
+
+.buildingContent {
+    color: #B0E0E6;
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.8);
+}
+
+/* Image Container */
+.image-container-right {
+    position: relative;
+    float: right;
+    margin: 1.25rem 6.25rem 9.75rem 1.25rem;
+    text-align: center;
+}
+
+.image-container-left {
+    position: relative;
+    float: left;
+    margin: 1.25rem 6.25rem 9.75rem 1.25rem;
+    text-align: center;
+}
+
+.image {
+    height: 21.875rem;
+    width: auto;
+    display: block;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 1.0);
+    border-radius: 0.625rem;
+    margin: 0 auto;
+}
+
+.image-caption {
+    margin: 0 0 5rem 0;
+    padding: 0 0.625rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #2b2525;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+/* Age Blocks */
+.age1, .age2, .age3, .age4, .age5, .age6 {
+    padding: 3.125rem;
+    margin: 0 3.125rem 10.875rem 1.875rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius:  0.9375rem;
+    animation: slideIn 1.5s ease-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.age1:hover, .age2:hover, .age3:hover, .age4:hover, .age5:hover, .age6:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 0.625rem 1.25rem  rgba(0, 0, 0, 0.8); 
+}
+
+/* Links */
+.link{
+    a {
+        color: #ddb0b0; 
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #edb0f5; 
+    }
+}
+/* Video Container */
+.videoContainer {
+    position: relative;
+    width: 50%;
+    margin: 1.875rem auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.videoContainer video {
+    width: 100%;
+    height: auto;
+}
+
+.videoContainer p {
+    font-size: 1.625rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.9);
+}
+
+.videoTitl{
+    text-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.8);
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    animation: fadeInBlur 2s ease-out;
+}
+
+/* Navigation */
+nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1;
+    background: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 10px;
+}
+
+nav li {
+    margin: 0 15px;
+    display: flex; 
+    align-items: center; 
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Video Button */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1.25rem;
+    width: 3.75rem; 
+    height: 3.75rem; 
+    border-radius: 50%;
+    box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/* Back to Top Button */
+#backToTop {
+    display: none; 
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    background-color: #00FFFF; 
+    color: white;
+    font-size: 1.25rem;  
+    width: 2.75rem; 
+    height: 2.75rem; 
+    border-radius: 50% !important; 
+    text-align: center;
+    line-height: 2.75rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+    transform: scale(1.1);
+    background-color: #00BFFF;
+}
+
+/* Footer Style */
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2.5rem; 
+    text-align: center;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -0.625rem 1.25rem rgba(0, 0, 0, 0.3); 
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0; 
+        filter: blur(10px); 
+    }
+    100% {
+        opacity: 1; 
+        filter: blur(0); 
+    }
+}
+
+/* Desktop Background Styles */
+@media (min-width: 769px) {
+    #bgVideo {
+        display: block; /* Show video on larger screens */
+    }
+
+    body {
+        background-image: none; /* Remove background image on larger screens */
+    }
+}
+
+/* Small Screen Styles */
+@media (max-width: 768px) {
+    #bgVideo {
+        display: none; /* Hide video on small screens */
+    }
+
+    body {
+        background-image: url('assets/Picture/History/historyBackground.png'); /* Ensure fallback image for mobile */
+    }
+
+    h1 {
+        font-size: 2rem; 
+        margin-top: 6rem;
+        margin-bottom: 4rem;
+    }
+
+    .image-container-right, .image-container-left {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    .image {
+        height: auto;
+        max-height: 15rem;
+    }
+
+    .age1, .age2, .age3, .age4, .age5, .age6 {
+        padding: 1.5rem;
+        margin: 0 1rem 6rem 1rem;
+    }
+
+    .videoContainer {
+        width: 100%;
+    }
+
+    .btn {
+        width: 3rem;
+        height: 3rem;
+        padding: 0.5rem;
+    }
+
+    .age {
+        font-size: 1.5rem; 
+        margin: 0.75rem 0; 
+        padding: 1rem; 
+    }
+
+
+    #backToTop {
+        font-size: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+/* Smaller Screen Styles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; 
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .age {
+        font-size: 1.25rem;
+        margin: 0.5rem 0;
+        padding: 0.75rem; 
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+
+    .building {
+        font-size: 1.25rem;
+    }
+
+    .buildingContent {
+        font-size: 1rem;
+    }
+
+    .image {
+        max-height: 12rem;
+    }
+
+    .age1, .age2, .age3, .age4, .age5, .age6 {
+        padding: 1rem;
+        margin: 0 0.5rem 4rem 0.5rem;
+    }
+
+    .btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0.25rem;
+    }
+
+    #backToTop {
+        font-size: 0.875rem;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
